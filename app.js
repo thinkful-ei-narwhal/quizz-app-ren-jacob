@@ -31,9 +31,69 @@ const store = {
 };
 
 
+$("#my-home-nav").click(function(){
+  $("#my-home-div").show(); // or .fadeIn(), etc.
+  $("#my-about-div").hide();
+  $("#my-contact-div").hide();
+});
 
 
 
+// START PAGE
+$('.Start').on('click', 'Start-Button', function handleStartButton () {
+  $(nextpage).show()
+}
+
+
+
+function getQuestion(item) {
+  return $(question)
+    .closest('li')
+    .data('item-id');
+}
+
+function getAnswer(item) {
+  return $(answer)
+    .closest('li')
+    .data('item-id');
+}
+
+
+
+//QUESTION PAGE
+
+function toggleCheckedAnswer() {
+
+
+}
+
+
+function handleNextButton(page) {
+
+
+}
+
+
+function handleAnswer() {
+  
+
+}
+
+
+function checkIfCorrect() {
+
+
+}
+
+
+//CORRECT
+
+function handleScore() {
+
+
+}
+
+function 
 
 /**
  * 
