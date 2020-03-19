@@ -53,11 +53,12 @@ const store = {
 //   $("#my-contact-div").hide();
 // });
 
-// START PAGE
+// START PAGE Change HTML class
 $('.start-button').on('click', function handleStartButton() {
   store.quizStarted = true;
-  console.log('workin', store.quizStarted);
-  //$(nextpage).show()
+  store.questionNumber++;
+  console.log('workin', store.quizStarted, store.questionNumber);
+  //$(nextpage).show();
 });
 
 // function getElementById(item) {
@@ -68,6 +69,7 @@ $('.start-button').on('click', function handleStartButton() {
 // }
 
 // //QUESTION PAGE
+function displayQuestion() {}
 
 // function toggleCheckedAnswer() {
 
@@ -86,10 +88,16 @@ $('.start-button').on('click', function handleStartButton() {
 // }
 
 // //CORRECT
-
-// function handleScore() {
-
+//function scoreCount() {
+//   if (theAnswer === store.correctAnswer) {
+//     return store.score++;
+//   } else {
+//     return store.score;
+//   }
 // }
+//function handleScore() {
+
+//}
 
 // function
 
