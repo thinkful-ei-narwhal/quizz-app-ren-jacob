@@ -1,69 +1,51 @@
 // /**
 //  * Example store structure
 //  */
-// const store = {
-//   // 5 or more questions are required
-//   questions: [
-//     {
-//       question: 'Who is the cutest in all the Galaxy?',
-//       answers: [
-//         'Babu Frik',
-//         'Baby Yoda',
-//         'R2-D2',
-//         'Salacius B. Crumb'
-//       ],
-//       correctAnswer: 'Baby Yoda'
-//     },
-//     {
-//       question: 'What was the order issued to kill the Jedi?',
-//       answers: [
-//         '66',
-//         '347',
-//         '42',
-//         '47'
-//       ],
-//       correctAnswer: '66'
-//     }
-//     {
-//       question: 'What color was Mace Windu\'s lightsaber?',
-//       answers: [
-//         'Blue',
-//         'Green',
-//         'Red',
-//         'Purple'
-//       ],
-//       correctAnswer: 'Purple'
-//     },
-//     {
-//       question: 'Which hand did Luke have cut off?',
-//       answers: [
-//         'Left',
-//         'I thought it was a foot!',
-//         'Right',
-//         'SHe didn\'t have a hand cut off'
-//       ],
-//       correctAnswer: 'Right'
-//     },
-//     {
-//       question: 'What was Finn\'s stormtropper code name?',
-//       answers: [
-//         'JK-1983',
-//         'FN-2187',
-//         'GN-6783',
-//         'FK-3902'
-//       ],
-//       correctAnswer: 'FN-2187'
-//     },
-//   ],
-//   quizStarted: false,
-//   questionNumber: 0,
-//   score: 0
-// };
+'use strict';
 
-$('button').on('click', function(event) {
-  event.preventDefault();
-  console.log('Working');
-});
+const store = {
+  // 5 or more questions are required
+  questions: [
+    {
+      question: 'Who is the cutest in all the Galaxy?',
+      answers: ['Babu Frik', 'Baby Yoda', 'R2-D2', 'Salacius B. Crumb'],
+      correctAnswer: 'Baby Yoda'
+    },
+    {
+      question: 'What was the order issued to kill the Jedi?',
+      answers: ['66', '347', '42', '47'],
+      correctAnswer: '66'
+    },
+    {
+      question: "What color was Mace Windu's lightsaber?",
+      answers: ['Blue', 'Green', 'Red', 'Purple'],
+      correctAnswer: 'Purple'
+    },
+    {
+      question: 'Which hand did Luke have cut off?',
+      answers: [
+        'Left',
+        'I thought it was a foot!',
+        'Right',
+        "SHe didn't have a hand cut off"
+      ],
+      correctAnswer: 'Right'
+    },
+    {
+      question: "What was Finn's stormtropper code name?",
+      answers: ['JK-1983', 'FN-2187', 'GN-6783', 'FK-3902'],
+      correctAnswer: 'FN-2187'
+    }
+  ],
+  quizStarted: false,
+  questionNumber: 0,
+  score: 0
+};
+
+// $('button').on('click', function(event) {
+//   event.preventDefault();
+//   console.log('Working');
+// });
 
 // $("#my-home-nav").click(function(){
 //   $("#my-home-div").show(); // or .fadeIn(), etc.
@@ -71,21 +53,18 @@ $('button').on('click', function(event) {
 //   $("#my-contact-div").hide();
 // });
 
-// // START PAGE
-// $('.Start').on('click', 'Start-Button', function handleStartButton () {
-//   $(nextpage).show()
-// }
+// START PAGE
+$('.start-button').on('click', function handleStartButton() {
+  store.quizStarted = true;
+  console.log('workin', store.quizStarted);
+  //$(nextpage).show()
+});
 
-// function getQuestion(item) {
+// function getElementById(item) {
 //   return $(question)
 //     .closest('li')
 //     .data('item-id');
 // }
-
-// function getAnswer(item) {
-//   return $(answer)
-//     .closest('li')
-//     .data('item-id');
 // }
 
 // //QUESTION PAGE
