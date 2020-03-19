@@ -1,0 +1,64 @@
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+.start {
+  border: 10px solid black;
+  background: grey;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  background: grey;
+}
+
+.Start-App {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  background: beige;
+}
+
+.start-button {
+  justify-content: center;
+}
+
+#logo {
+  width: 200px;
+  padding: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+li:hover {
+  font-size: 150%;
+}
+
+.main-nav-list {
+  list-style: none;
+  padding: 0;
+}
+.main-nav-list-item {
+  padding: .7rem 0;
+  text-align:center;
+  background-color: lime;
+  border: 1px solid #000;
+}
+
+.box {
+  background-color: pink;
+  border:1px solid blue;
+  margin: 10px 0;
+  padding:10px;
+}
