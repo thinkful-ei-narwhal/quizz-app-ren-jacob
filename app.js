@@ -58,9 +58,10 @@ function startPage() {
   }
 }
 function handleStartButton() {
-  $('.Start-App').on('click', '.start-button', function() {
+  $('.Start').on('click', '.start-button', function() {
     store.quizStarted = true;
     // console.log('workin', store.quizStarted, store.questionNumber);
+    console.log('working');
     displayQuestion();
   });
 }
@@ -70,29 +71,35 @@ function displayQuestion() {
   let question = `<p>Question: ${store.questionNumber + 1} / 5 </p><p>${
     store.questions[store.questionNumber].question
   }</p>`;
-  for (
-    let i = 0;
-    i < store.questions[store.questionNumber].answers.length;
-    i++
-  ) {
+  for (let i = 0; i < store.questions[store.questionNumber].answers.length; i++) {
     let newAnswers = store.questions[store.questionNumber].answers[i];
     question += `<label><input class = 'js-checkAnswer' type="radio" name = 'radAnswer' value = '${newAnswers}'>${newAnswers}</label>`;
   }
   question += `
-  <button id = 'submit-button' class="next-button" type="button" value="submit">SUBMIT</button>
+  <button id = 'submit-button' class="next-button" type="button" value="submit" hidden = 'true' >SUBMIT</button>
   <div id = "answer" hidden></div>
   <img
     id="logo"
     src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
     alt="Star Wars Logo"
   />`;
-  $('.Start-App').html(question);
+  $('.Start').html('');
+  $('.Start').html(question);
 }
 
 function checkedAnswer() {
-  $('.Start-App').on('click', '.next-button', function(event) {
+  $('.Start').change('js-checkAnswer', function() {
+    if($('.js-checkAnswer').is(':checked')) {
+      $('.next-button').removeAttr('hidden');
+      console.log('working checked')
+    }
+
+  });
+
+  $('.Start').on('click', '.next-button', function(event) {
     event.preventDefault();
     const value = $('.js-checkAnswer:checked').val();
+    console.log(value);
     if (value === store.questions[store.questionNumber].correctAnswer) {
       store.score++;
       handleCorrectAnswer();
@@ -107,7 +114,7 @@ function handleCorrectAnswer() {
   const correct = `<p class= 'answer-display'> Correct! </p><p class= 'score-display'>SCORE:${store.score}/5</p>
   <button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button>`;
   console.log('the score works', store.score);
-  $('.Start-App').html(correct);
+  $('.Start').html(correct);
 }
 
 function handleWrongAnswer() {
@@ -115,13 +122,13 @@ function handleWrongAnswer() {
     store.questions[store.questionNumber].correctAnswer
   } <p class= 'score-display'>SCORE:${store.score}/5</p> 
   <button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button>`;
-  $('.Start-App').html(wrong);
+  $('.Start').html(wrong);
   console.log('the score works');
   return store.score;
 }
 
 function handleNextButton() {
-  $('.Start-App').on('click', '.next-question-button', function() {
+  $('.Start').on('click', '.next-question-button', function() {
     store.questionNumber++;
     if (store.questionNumber === 5) {
       handleEndPage();
@@ -135,10 +142,10 @@ function handleNextButton() {
 function handleEndPage() {
   let end =
     '<p>The End</p><button id = \'restart-button\' class="restart-button" type="button" value="submit">Restart</button>';
-  $('.Start-App').html(end);
+  $('.Start').html(end);
 }
 function restartGame() {
-  $('.Start-App').on('click', '.restart-button', function() {
+  $('.Start').on('click', '.restart-button', function() {
     store.quizStarted = false;
     store.questionNumber = 0;
     store.score = 0;
