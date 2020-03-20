@@ -1,10 +1,6 @@
-// /**
-//  * Example store structure
-//  */
 'use strict';
 
 const store = {
-  // 5 or more questions are required
   questions: [
     {
       question: 'Who is the cutest in all the Galaxy?',
@@ -42,30 +38,13 @@ const store = {
   score: 0
 };
 
-// $('button').on('click', function(event) {
-//   event.preventDefault();
-//   console.log('Working');
-// });
-
-// $("#my-home-nav").click(function(){
-//   $("#my-home-div").show(); // or .fadeIn(), etc.
-//   $("#my-about-div").hide();
-//   $("#my-contact-div").hide();
-// });
-
-// START PAGE Change HTML class
+// START PAGE
 $('.start-button').on('click', function handleStartButton() {
   store.quizStarted = true;
-  console.log('workin', store.quizStarted, store.questionNumber);
-  window.location.href = 'Questions.html';
+  // console.log('workin', store.quizStarted, store.questionNumber);
+  // window.location.href = 'Questions.html';
+  displayQuestion();
 });
-
-// function getElementById(item) {
-//   return $(question)
-//     .closest('li')
-//     .data('item-id');
-// }
-// }
 
 // //QUESTION PAGE
 
@@ -78,13 +57,11 @@ function displayQuestion() {
     i < store.questions[store.questionNumber].answers.length;
     i++
   ) {
-    question += ` <li> ${
-      store.questions[store.questionNumber].answers[i]
-    } </li>`;
+    let newAnswers = store.questions[store.questionNumber].answers[i];
+    question += `<label><input class = 'js-checkAnswer' type="radio" name = 'radAnswer' value = ${newAnswers}>${newAnswers}</label>`;
   }
-  question += `</ul>
-  <button id = 'next' class="next-button" type="button" value="submit" disabled = "true" hidden>NEXT</button>
-  <button id = 'submit-button' class="next-button" type="button" value="submit" disabled = "true">SUBMIT</button>
+  question += `
+  <button id = 'submit-button' class="next-button" type="button" value="submit">SUBMIT</button>
   <div id = "answer" hidden></div>
   <img
     id="logo"
@@ -96,10 +73,44 @@ function displayQuestion() {
   $('.Start-App').html(question);
 }
 
-// function toggleCheckedAnswer() {
+function checkedAnswer() {
+  $('.Start-App').on('click', '.next-button', function(event) {
+    event.preventDefault();
+    const value = $('.js-checkAnswer:checked').val();
+    //below works however .val is grabbing only the first word of the string
+    if (value === store.questions[store.questionNumber].correctAnswer) {
+      console.log('HELL YA!');
+    } else {
+      console.log('RIP');
+    }
+    // console.log('working', value);
+  });
+}
 
-// }
+//Rendering
 
+function renderQuizApp() {
+  checkedAnswer();
+}
+
+$(renderQuizApp);
+
+// $('button').on('click', function(event) {
+//   event.preventDefault();
+//   console.log('Working');
+// });
+
+// $("#my-home-nav").click(function(){
+//   $("#my-home-div").show(); // or .fadeIn(), etc.
+//   $("#my-about-div").hide();
+//   $("#my-contact-div").hide();
+// });
+
+// $('button').on('click', 'next-button', function handleStartButton() {
+//   event.preventDefault();
+
+//   console.log('workin');
+// });
 // function handleNextButton(page) {
 
 // }
@@ -124,7 +135,12 @@ function displayQuestion() {
 
 //}
 
-// function
+// function getElementById(item) {
+//   return $(question)
+//     .closest('li')
+//     .data('item-id');
+// }
+// }
 
 // /**
 //  *

@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz App</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="app.css" rel="stylesheet" type="text/css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Quiz App</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"
-    type="text/css" />
-  <link href="app.css" rel="stylesheet" type="text/css" />
-</head>
+  <body>
+    <header>
+      <h1>Star Wars Quiz</h1>
+    </header>
+    <main>
+      <section class="Start">
+        <form class="js-answers">
+          
+          <div class="Start-App">
 
-<body>
-  <header>
-    <h1>Star Wars Quiz</h1>
-  </header>
-  <main>
-    <section class="Start">
-      <div class="Start-App">
-        <p id="start">Click Start to Test Your Skills</p>
+          <p id="start">Click Start to Test Your Skills</p>
+        </form>
         <button class="start-button" type="button" value="submit">
           START
         </button>
-        <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
-          alt="Star Wars Logo" />
-      </div>
-    </section>
-  </main>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.js" crossorigin="anonymous"></script>
-  <script src="app.js"></script>
-</body>
-
+        <img
+          id="logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
+          alt="Star Wars Logo"
+        /></div>
+        </section>
+      </section>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
 </html>
