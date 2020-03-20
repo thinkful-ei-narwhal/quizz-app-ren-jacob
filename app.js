@@ -41,13 +41,8 @@ const store = {
 // START PAGE
 function startPage() {
   if (store.quizStarted === false) {
-    let start = `<section class="Start">
-    <form class="js-answers">
-      
-      <div class="Start-App">
-
+    let start = `<div class = 'start-container'>
       <p id="start">Click Start to Test Your Skills</p>
-    </form>
     <button class="start-button" type="button" value="submit">
       START
     </button>
@@ -55,16 +50,17 @@ function startPage() {
       id="logo"
       src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
       alt="Star Wars Logo"
-    /></div>
-  </section>`;
+    />
+    </div>`;
     $('.Start').html(start);
+  } else {
+    console.log('not working');
   }
 }
 function handleStartButton() {
-  $('.start-button').on('click', function() {
+  $('.Start-App').on('click', '.start-button', function() {
     store.quizStarted = true;
     // console.log('workin', store.quizStarted, store.questionNumber);
-    // window.location.href = 'Questions.html';
     displayQuestion();
   });
 }
@@ -97,7 +93,6 @@ function checkedAnswer() {
   $('.Start-App').on('click', '.next-button', function(event) {
     event.preventDefault();
     const value = $('.js-checkAnswer:checked').val();
-    //below works however .val is grabbing only the first word of the string
     if (value === store.questions[store.questionNumber].correctAnswer) {
       store.score++;
       handleCorrectAnswer();
@@ -154,12 +149,12 @@ function restartGame() {
 //Rendering
 
 function renderQuizApp() {
+  startPage();
   handleStartButton();
   checkedAnswer();
   handleNextButton();
   restartGame();
 }
-
 $(renderQuizApp);
 
 // $('button').on('click', function(event) {
