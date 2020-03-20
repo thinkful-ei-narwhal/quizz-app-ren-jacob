@@ -23,7 +23,7 @@ const store = {
         'Left',
         'I thought it was a foot!',
         'Right',
-        "She didn't have a hand cut off"
+        "He didn't have a hand cut off"
       ],
       correctAnswer: 'Right'
     },
@@ -39,13 +39,35 @@ const store = {
 };
 
 // START PAGE
-$('.start-button').on('click', function handleStartButton() {
-  store.quizStarted = true;
-  // console.log('workin', store.quizStarted, store.questionNumber);
-  // window.location.href = 'Questions.html';
-  displayQuestion();
-});
+function startPage() {
+  if (store.quizStarted === false) {
+    let start = `<section class="Start">
+    <form class="js-answers">
+      
+      <div class="Start-App">
 
+      <p id="start">Click Start to Test Your Skills</p>
+    </form>
+    <button class="start-button" type="button" value="submit">
+      START
+    </button>
+    <img
+      id="logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
+      alt="Star Wars Logo"
+    /></div>
+  </section>`;
+    $('.Start').html(start);
+  }
+}
+function handleStartButton() {
+  $('.start-button').on('click', function() {
+    store.quizStarted = true;
+    // console.log('workin', store.quizStarted, store.questionNumber);
+    // window.location.href = 'Questions.html';
+    displayQuestion();
+  });
+}
 // //QUESTION PAGE
 
 function displayQuestion() {
@@ -77,6 +99,7 @@ function checkedAnswer() {
     const value = $('.js-checkAnswer:checked').val();
     //below works however .val is grabbing only the first word of the string
     if (value === store.questions[store.questionNumber].correctAnswer) {
+      store.score++;
       handleCorrectAnswer();
     } else {
       handleWrongAnswer();
@@ -86,34 +109,55 @@ function checkedAnswer() {
 }
 
 function handleCorrectAnswer() {
-  const correct = `<p> Correct! </p> <p> ${
-    store.questions[store.questionNumber]
-  } </p> 
+  const correct = `<p class= 'answer-display'> Correct! </p><p class= 'score-display'>SCORE:${store.score}/5</p>
   <button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button>`;
-  $('.Start-App').html(correct);
-  store.score++;
   console.log('the score works', store.score);
+  $('.Start-App').html(correct);
 }
-
-$('.Start-App').on(
-  'click',
-  '.next-question-button',
-  function handleNextButton() {
-    store.questionNumber++;
-    console.log('working', store.questionNumber);
-    displayQuestion();
-  }
-);
 
 function handleWrongAnswer() {
-  displayQuestion();
+  const wrong = `<p class= 'answer-display'> Wrong!</p><p class= 'correct-answer'>Correct Answer: ${
+    store.questions[store.questionNumber].correctAnswer
+  } <p class= 'score-display'>SCORE:${store.score}/5</p> 
+  <button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button>`;
+  $('.Start-App').html(wrong);
+  console.log('the score works');
+  return store.score;
 }
 
+function handleNextButton() {
+  $('.Start-App').on('click', '.next-question-button', function() {
+    store.questionNumber++;
+    if (store.questionNumber === 5) {
+      handleEndPage();
+    } else {
+      displayQuestion();
+    }
+    console.log('working', store.questionNumber);
+  });
+}
+
+function handleEndPage() {
+  let end =
+    '<p>The End</p><button id = \'restart-button\' class="restart-button" type="button" value="submit">Restart</button>';
+  $('.Start-App').html(end);
+}
+function restartGame() {
+  $('.Start-App').on('click', '.restart-button', function() {
+    store.quizStarted = false;
+    store.questionNumber = 0;
+    store.score = 0;
+    startPage();
+    console.log('working');
+  });
+}
 //Rendering
 
 function renderQuizApp() {
-  const wrong = `<p> Wrong! </p>`;
+  handleStartButton();
   checkedAnswer();
+  handleNextButton();
+  restartGame();
 }
 
 $(renderQuizApp);
@@ -136,33 +180,6 @@ $(renderQuizApp);
 // });
 // function handleNextButton(page) {
 
-// }
-
-// function handleAnswer() {
-
-// }
-
-// function checkIfCorrect() {
-
-// }
-
-// //CORRECT
-//function scoreCount() {
-//   if (theAnswer === store.correctAnswer) {
-//     return store.score++;
-//   } else {
-//     return store.score;
-//   }
-// }
-//function handleScore() {
-
-//}
-
-// function getElementById(item) {
-//   return $(question)
-//     .closest('li')
-//     .data('item-id');
-// }
 // }
 
 // /**
