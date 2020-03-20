@@ -23,7 +23,7 @@ header {
 }
 
 .Start-App {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   align-items: center;
   background: beige;
@@ -41,6 +41,7 @@ header {
 li {
   list-style-type: none;
 }
+
 li:hover {
   font-size: 150%;
 }
@@ -49,16 +50,17 @@ li:hover {
   list-style: none;
   padding: 0;
 }
+
 .main-nav-list-item {
   padding: .7rem 0;
-  text-align:center;
+  text-align: center;
   background-color: lime;
   border: 1px solid #000;
 }
 
 .box {
   background-color: pink;
-  border:1px solid blue;
+  border: 1px solid blue;
   margin: 10px 0;
-  padding:10px;
+  padding: 10px;
 }
