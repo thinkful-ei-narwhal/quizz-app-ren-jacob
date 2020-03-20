@@ -11,56 +11,477 @@
   box-sizing: border-box;
 }
 
-.start {
-  border: 10px solid black;
-  background: grey;
+
+@media (max-width: 600px) {
+  label {
+    padding:0 10px 10px 10px;
+    font-size: 20px;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+  }
+
+  input {
+    display: block;
+  }
+  
+  #submit-button:hover {
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+  
+  }
+  
+  #start {
+    border: 3px solid blueviolet;
+    padding: 5px;
+  }
+  
+  .start-container {
+    position: absolute;
+    bottom: 20px;
+    top:60px;
+    width: 100%;
+  }
+  
+  .start-button {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    text-align:center;
+    transition: all 0.2s;
+    margin-left: 85px;
+    position: absolute;
+    left: 160px;
+    top: 200px;
+  }
+  
+  .start-button:hover {
+    color:#000000;
+    background-color:#FFFFFF;
+  }
+  
+  p {
+    color: rgb(230, 54, 69);
+    position: absolute;
+    left: 160px;
+    top: 100px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    background-color: gold;
+  }
+  
+  .Start {
+    position: absolute;
+    bottom: 20px;
+    top:60px;
+    width: 100%;
+    background-image: url('https://i.imgur.com/dbQGQ0L.jpeg');
+    background-position: center;
+  }
+  
+  .start-button {
+    justify-content: center;
+  }
+  
+  #logo {
+    width: 200px;
+    padding: 10px;
+    margin-left: 40px;
+    display:none;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  label:hover {
+    font-size: 150%;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    text-align:center;
+    transition: all 0.2s;
+  }
+
+.question {
+  display: inline-block
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  background: grey;
+
 }
 
-.Start {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: beige;
+@media (min-width: 600px) {
+  label {
+    padding:0 10px 10px 10px;
+    font-size: 20px;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    
+  }
+  
+  #submit-button:hover {
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+  
+  }
+  
+  #start {
+    border: 3px solid blueviolet;
+    padding: 5px;
+  }
+  
+  .start-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+  
+  .start-button {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    text-align:center;
+    transition: all 0.2s;
+    margin-left: 85px;
+  }
+  
+  .start-button:hover {
+    color:#000000;
+    background-color:#FFFFFF;
+  }
+  
+  p {
+  
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    background-color: gold;
+  }
+  
+  .Start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgray;
+    background-image: url('https://i.imgur.com/dbQGQ0L.jpeg');
+    background-position: center;
+  }
+  
+  .start-button {
+    justify-content: center;
+  }
+  
+  #logo {
+    width: 200px;
+    padding: 10px;
+    margin-left: 40px;
+    display:none;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  label:hover {
+    font-size: 150%;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    text-align:center;
+    transition: all 0.2s;
+  }
 }
 
-.start-button {
-  justify-content: center;
+@media (min-width: 768px) {
+  label {
+    padding:0 10px 10px 10px;
+    font-size: 20px;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    
+  }
+  
+  #submit-button:hover {
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+  
+  }
+  
+  #start {
+    border: 3px solid blueviolet;
+    padding: 5px;
+  }
+  
+  .start-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+  
+  .start-button {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    text-align:center;
+    transition: all 0.2s;
+    margin-left: 85px;
+    position: absolute;
+    top: 300px;
+    right: 400px;
+  }
+  
+  .start-button:hover {
+    color:#000000;
+    background-color:#FFFFFF;
+  }
+  
+  p {
+    position: absolute;
+    right: 290px;
+    top: 200px;
+    color: rgb(230, 54, 69);
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    background-color: gold;
+  }
+  
+  .Start {
+    position: absolute;
+    bottom: 20px;
+    top:60px;
+    width: 100%;
+    background-image: url('https://i.imgur.com/dbQGQ0L.jpeg');
+    background-position: center;
+  }
+  
+  .start-button {
+    justify-content: center;
+  }
+  
+  #logo {
+    width: 200px;
+    padding: 10px;
+    margin-left: 40px;
+    display: none;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  label:hover {
+    font-size: 150%;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    text-align:center;
+    transition: all 0.2s;
+  }
+
 }
 
-#logo {
-  width: 200px;
-  padding: 10px;
-}
+@media (min-width: 1200px) {
 
-li {
-  list-style-type: none;
-}
-
-li:hover {
-  font-size: 150%;
-}
-
-.main-nav-list {
-  list-style: none;
-  padding: 0;
-}
-
-.main-nav-list-item {
-  padding: .7rem 0;
-  text-align: center;
-  background-color: lime;
-  border: 1px solid #000;
-}
-
-.box {
-  background-color: pink;
-  border: 1px solid blue;
-  margin: 10px 0;
-  padding: 10px;
+  label {
+    padding:0 10px 10px 10px;
+    font-size: 20px;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    
+  }
+  
+  #submit-button:hover {
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+  
+  }
+  
+  #start {
+    padding: 5px;
+  }
+  
+  .start-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: baseline;
+  }
+  
+  .start-button {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    text-align:center;
+    transition: all 0.2s;
+    margin-left: 85px;
+    position: absolute;
+    right: 580px
+  }
+  
+  .start-button:hover {
+    color:#000000;
+    background-color:#FFFFFF;
+  }
+  
+  p {
+    position: absolute;
+    right: 490px;
+    top: 200px;
+    color: rgb(230, 54, 69);
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: center;
+    background-color: gold;
+  }
+  
+  .Start {
+    position: absolute;
+    bottom: 20px;
+    top:60px;
+    width: 100%;
+    background-image: url('https://i.imgur.com/dbQGQ0L.jpeg');
+  }
+  
+  .start-button {
+    justify-content: center;
+  }
+  
+  #logo {
+    width: 200px;
+    padding: 10px;
+    margin-left: 40px;
+    display:none;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  label:hover {
+    font-size: 150%;
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:rgb(211, 9, 211);
+    text-align:center;
+    transition: all 0.2s;
+  }
 }

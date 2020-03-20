@@ -66,9 +66,8 @@ function generateStartPage() {
 // //QUESTION PAGE & ANSWER PAGE
 
 function generateQuestion() {
-  let question = `<p>Question: ${store.questionNumber + 1} / 5 </p><p>${
-    store.questions[store.questionNumber].question
-  }</p>`;
+  let question = `<p class = 'question'> Question: ${store.questionNumber +
+    1} / 5 </p><p>${store.questions[store.questionNumber].question}</p>`;
   for (
     let i = 0;
     i < store.questions[store.questionNumber].answers.length;
