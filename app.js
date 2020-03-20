@@ -23,7 +23,7 @@ const store = {
         'Left',
         'I thought it was a foot!',
         'Right',
-        "SHe didn't have a hand cut off"
+        "She didn't have a hand cut off"
       ],
       correctAnswer: 'Right'
     },
@@ -49,7 +49,7 @@ $('.start-button').on('click', function handleStartButton() {
 // //QUESTION PAGE
 
 function displayQuestion() {
-  let question = `<p>Question:</p><p>${
+  let question = `<p>Question: ${store.questionNumber + 1} / 5 </p><p>${
     store.questions[store.questionNumber].question
   }</p>`;
   for (
@@ -58,7 +58,7 @@ function displayQuestion() {
     i++
   ) {
     let newAnswers = store.questions[store.questionNumber].answers[i];
-    question += `<label><input class = 'js-checkAnswer' type="radio" name = 'radAnswer' value = ${newAnswers}>${newAnswers}</label>`;
+    question += `<label><input class = 'js-checkAnswer' type="radio" name = 'radAnswer' value = '${newAnswers}'>${newAnswers}</label>`;
   }
   question += `
   <button id = 'submit-button' class="next-button" type="button" value="submit">SUBMIT</button>
@@ -68,8 +68,6 @@ function displayQuestion() {
     src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
     alt="Star Wars Logo"
   />`;
-
-  $('.Start-App').html('');
   $('.Start-App').html(question);
 }
 
@@ -79,17 +77,42 @@ function checkedAnswer() {
     const value = $('.js-checkAnswer:checked').val();
     //below works however .val is grabbing only the first word of the string
     if (value === store.questions[store.questionNumber].correctAnswer) {
-      console.log('HELL YA!');
+      handleCorrectAnswer();
     } else {
-      console.log('RIP');
+      handleWrongAnswer();
     }
     // console.log('working', value);
   });
 }
 
+function handleCorrectAnswer() {
+  const correct = `<p> Correct! </p> <p> ${
+    store.questions[store.questionNumber]
+  } </p> 
+  <button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button>`;
+  $('.Start-App').html(correct);
+  store.score++;
+  console.log('the score works', store.score);
+}
+
+$('.Start-App').on(
+  'click',
+  '.next-question-button',
+  function handleNextButton() {
+    store.questionNumber++;
+    console.log('working', store.questionNumber);
+    displayQuestion();
+  }
+);
+
+function handleWrongAnswer() {
+  displayQuestion();
+}
+
 //Rendering
 
 function renderQuizApp() {
+  const wrong = `<p> Wrong! </p>`;
   checkedAnswer();
 }
 
