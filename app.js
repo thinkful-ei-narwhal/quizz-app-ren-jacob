@@ -68,21 +68,22 @@ function handleStartButton() {
 // //QUESTION PAGE
 
 function displayQuestion() {
-  let question = `<p class = 'question'> Question: ${store.questionNumber + 1} / 5 </p><p>${
+  let question = `<div id = 'question-container'> <p class = 'question'> Question: ${store.questionNumber + 1} / 5 </p><p>${
     store.questions[store.questionNumber].question
   }</p>`;
   for (let i = 0; i < store.questions[store.questionNumber].answers.length; i++) {
     let newAnswers = store.questions[store.questionNumber].answers[i];
-    question += `<label><input class = 'js-checkAnswer' type="radio" name = 'radAnswer' value = '${newAnswers}'>${newAnswers}</label>`;
+    question += `<label><input class = 'js-checkAnswer' type="radio" name = 'radAnswer' checked= 'checked' value = '${newAnswers}'><span id = 'focus'>${newAnswers}</span></label>`;
   }
   question += `
-  <button id = 'submit-button' class="next-button" type="button" value="submit" hidden = 'true' checked='checked'>SUBMIT</button>
+  <button id = 'submit-button' class="next-button" type="button" value="submit" hidden = 'true' checked= 'checked'>SUBMIT</button>
   <div id = "answer" hidden></div>
   <img
     id= "logo"
     src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
     alt="Star Wars Logo"
-  />`;
+  />
+  </div>`;
   $('.Start').html('');
   $('.Start').html(question);
 }
