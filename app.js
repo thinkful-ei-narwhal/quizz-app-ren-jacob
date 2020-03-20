@@ -5,7 +5,8 @@
 
 const store = {
   // 5 or more questions are required
-  questions: [{
+  questions: [
+    {
       question: 'Who is the cutest in all the Galaxy?',
       answers: ['Babu Frik', 'Baby Yoda', 'R2-D2', 'Salacius B. Crumb'],
       correctAnswer: 'Baby Yoda'
@@ -57,7 +58,6 @@ $('.start-button').on('click', function handleStartButton() {
   store.quizStarted = true;
   console.log('workin', store.quizStarted, store.questionNumber);
   window.location.href = 'Questions.html';
-
 });
 
 // function getElementById(item) {
@@ -68,25 +68,45 @@ $('.start-button').on('click', function handleStartButton() {
 // }
 
 // //QUESTION PAGE
+
 function displayQuestion() {
-  let question = '<p>Question</p>' +
-    '<ul id="buttons">';
-  for (let i = 0; i < store.questions[store.questionNumber].answers.length; i++) {
-    question += ` <li> ${store.questions[store.questionNumber].answers[i]} </li>`
-  }
-  question += `</ul>
-  <button id = 'next' class="next-button" type="button" value="submit" disabled = "true" hidden>NEXT</button>
-  <button id = 'submit-button' class="next-button" type="button" value="submit" disabled = "true">SUBMIT</button>
-  <div id = "answer" hidden></div>
-  <img
-    id="logo"
-    src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
-    alt="Star Wars Logo"
-  />`;
+  let question = `<p>Question:</p><p>${
+    store.questions[store.questionNumber].question
+  }</p><li> ${
+    store.questions[store.questionNumber].answers
+  } </li><ul id="buttons"></ul>
+      <button id = 'next' class="next-button" type="button" value="submit" disabled = "true" hidden>NEXT</button>
+      <button id = 'submit-button' class="next-button" type="button" value="submit" disabled = "true">SUBMIT</button>
+      <div id = "answer" hidden></div>
+      <img
+        id="logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
+        alt="Star Wars Logo"
+      />`;
+  $('.Start-App').html('');
+  $('.Start-App').html(question);
+  // let question = '<p>Question</p>' + '<ul id="buttons">';
+  // for (
+  //   let i = 0;
+  //   i < store.questions[store.questionNumber].answers.length;
+  //   i++
+  // ) {
+  //   question += ` <li> ${
+  //     store.questions[store.questionNumber].answers[i]
+  //   } </li>`;
+  // }
+  // question += `</ul>
+  // <button id = 'next' class="next-button" type="button" value="submit" disabled = "true" hidden>NEXT</button>
+  // <button id = 'submit-button' class="next-button" type="button" value="submit" disabled = "true">SUBMIT</button>
+  // <div id = "answer" hidden></div>
+  // <img
+  //   id="logo"
+  //   src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
+  //   alt="Star Wars Logo"
+  // />`;
 
-  $(".Start-App").html('');
-  $(".Start-App").html(question);
-
+  // $('.Start-App').html('');
+  // $('.Start-App').html(question);
 }
 
 // function toggleCheckedAnswer() {
