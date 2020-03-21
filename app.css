@@ -2,192 +2,7 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-  body {
-    background-image: url('https://i.imgur.com/tUQ4xPX.jpeg');
-    background-position: center;
-  }
-
-  .start-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #logo {
-    display: none;
-  }
-
-  header {
-    display: flex;
-    justify-content: center;
-  }
-
-  .start-button {
-    padding: 0.35em 1.2em;
-    border: 0.1em solid #ffffff;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: rgb(211, 9, 211);
-    text-align: center;
-    transition: all 0.2s;
-    margin-top: 20px;
-  }
-
-  .start-button:hover {
-    border: 0.1em solid rgb(243, 115, 115);
-  }
-
-  #start {
-    font-size: 25px;
-    padding: 0.35em 1.2em;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: rgb(230, 164, 79);
-    text-shadow: 2px 2px #ff0000;
-    text-shadow: black;
-  }
-
-  h1 {
-    color: gold;
-    text-shadow: 2px 2px #ff0000;
-  }
-
-  #submit-button {
-    padding: 0.35em 1.2em;
-    border: 0.1em solid rgb(218, 157, 157);
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: rgb(211, 9, 211);
-    text-align: center;
-    transition: all 0.2s;
-  }
-
-  #submit-button:hover {
-    padding: 0.35em 1.2em;
-    border: 0.1em solid #ffffff;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: rgb(211, 9, 211);
-    text-align: center;
-    transition: all 0.2s;
-  }
-
-  #next-question-button {
-    padding: 0.35em 1.2em;
-    border: 0.1em solid #ffffff;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: rgb(211, 9, 211);
-    text-align: center;
-    transition: all 0.2s;
-  }
-
-  .restart-button {
-    padding: 0.35em 1.2em;
-    border: 0.1em solid #ffffff;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: rgb(211, 9, 211);
-    text-align: center;
-    transition: all 0.2s;
-  }
-
-  p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0.35em 1.2em;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    color: rgb(228, 33, 33);
-    text-align: center;
-    transition: all 0.2s;
-    font-weight: bold;
-    font-size: 24px;
-    text-shadow: 2px 2px #582727;
-  }
-
-  #question-container {
-    display: flex;
-    align-items: center;
-    justify-self: center;
-    flex-direction: column;
-    flex: -1;
-  }
-
-  label {
-    display: flex;
-    justify-content: center;
-    color: rgb(19, 31, 99);
-    font-weight: bold;
-    padding: 10px;
-    font-size: 24px;
-    padding: 0.35em 1.2em;
-    border: 0.1em solid #ffffff;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.12em;
-    box-sizing: border-box;
-    text-shadow: 2px 2px #532626;
-  }
-
-  input[type='radio']:checked + span {
-    color: rgb(14, 74, 109);
-  }
-
-  [type='radio'] {
-    opacity: 0;
-  }
-
-  .answer-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
-
-  [class^='a-button'] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  [class$='Img'] {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-@media (min-width: 600px) {
+@media (max-width: 300px) {
   body {
     background-image: url('https://i.imgur.com/JTjy2Of.jpg');
     background-position: center;
@@ -317,7 +132,7 @@
     transition: all 0.2s;
     font-weight: bold;
     font-size: 24px;
-    text-shadow: 2px 2px #ff0000;
+    text-shadow: 1px 1px #f3f3f3;
   }
 
   #question-container {
@@ -331,7 +146,7 @@
   label {
     display: flex;
     justify-content: center;
-    color: rgb(207, 172, 55);
+    color: rgb(19, 31, 99);
     font-weight: bold;
     padding: 10px;
     font-size: 24px;
@@ -340,10 +155,11 @@
     margin: 0 0.3em 0.3em 0;
     border-radius: 0.12em;
     box-sizing: border-box;
+    text-shadow: 1px 1px #532626;
   }
 
   input[type='radio']:checked + span {
-    color: rgb(224, 28, 175);
+    color: rgb(226, 34, 21);
   }
 
   [type='radio'] {
@@ -371,7 +187,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   body {
     background-image: url('https://i.imgur.com/JTjy2Of.jpg');
     background-position: center;
@@ -555,7 +371,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (min-width: 768px) {
   body {
     background-image: url('https://i.imgur.com/JTjy2Of.jpg');
     background-position: center;
@@ -603,7 +419,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: rgb(230, 164, 79);
-    text-shadow: 2px 2px #ff0000;
+    text-shadow: 1px 1px #ff0000;
     text-shadow: black;
   }
 
@@ -680,12 +496,12 @@
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    color: rgb(218, 231, 228);
+    color: rgb(245, 110, 110);
     text-align: center;
     transition: all 0.2s;
     font-weight: bold;
     font-size: 24px;
-    text-shadow: 2px 2px #ff0000;
+    text-shadow: 1px 1px #ff0000;
   }
 
   #question-container {
@@ -699,22 +515,408 @@
   label {
     display: flex;
     justify-content: center;
-    color: rgb(218, 231, 228);
+    color: rgb(166, 18, 211);
     font-weight: bold;
     padding: 10px;
-    font-size: 36px;
+    font-size: 28px;
     padding: 0.35em 1.2em;
     border: 0.1em solid #ffffff;
     margin: 0 0.3em 0.3em 0;
     border-radius: 0.12em;
     box-sizing: border-box;
-    text-shadow: 2px 2px #080808;
+    text-shadow: 1px 1px darkgray;
+    background-color:rgba(71, 245, 216, 0.3)
   }
 
   input[type='radio']:checked + span {
-    color: rgb(218, 204, 204);
-    text-shadow: 2px 2px #181616;
+    color: rgb(202, 38, 38);
+    text-decoration: underline;
+  
   }
+
+
+
+  [type='radio'] {
+    opacity: 0;
+  }
+
+  .answer-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+
+  [class^='a-button'] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  [class$='Img'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+ @media (max-width: 992px) {
+    body {
+      background-image: url('https://i.imgur.com/JTjy2Of.jpg');
+      background-position: center;
+    }
+  
+    .start-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #logo {
+      display: none;
+    }
+  
+    header {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .start-button {
+      padding: 0.35em 1.2em;
+      border: 0.1em solid #ffffff;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      color: rgb(211, 9, 211);
+      text-align: center;
+      transition: all 0.2s;
+      margin-top: 20px;
+    }
+  
+    .start-button:hover {
+      border: 0.1em solid rgb(243, 115, 115);
+    }
+  
+    #start {
+      font-size: 25px;
+      padding: 0.35em 1.2em;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      color: rgb(230, 164, 79);
+      text-shadow: 1px 1px #ff0000;
+      text-shadow: black;
+    }
+  
+    h1 {
+      color: gold;
+      text-shadow: 2px 2px #ff0000;
+    }
+  
+    #submit-button {
+      padding: 0.35em 1.2em;
+      border: 0.1em solid rgb(218, 157, 157);
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      color: rgb(211, 9, 211);
+      text-align: center;
+      transition: all 0.2s;
+    }
+  
+    #submit-button:hover {
+      padding: 0.35em 1.2em;
+      border: 0.1em solid #ffffff;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      color: rgb(211, 9, 211);
+      text-align: center;
+      transition: all 0.2s;
+    }
+  
+    #next-question-button {
+      padding: 0.35em 1.2em;
+      border: 0.1em solid #ffffff;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      color: rgb(211, 9, 211);
+      text-align: center;
+      transition: all 0.2s;
+    }
+  
+    .restart-button {
+      padding: 0.35em 1.2em;
+      border: 0.1em solid #ffffff;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      color: rgb(211, 9, 211);
+      text-align: center;
+      transition: all 0.2s;
+    }
+  
+    p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35em 1.2em;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 300;
+      color: rgb(245, 110, 110);
+      text-align: center;
+      transition: all 0.2s;
+      font-weight: bold;
+      font-size: 24px;
+      text-shadow: 1px 1px #ff0000;
+    }
+  
+    #question-container {
+      display: flex;
+      align-items: center;
+      justify-self: center;
+      flex-direction: column;
+      flex: -1;
+    }
+  
+    label {
+      display: flex;
+      justify-content: center;
+      color: rgb(166, 18, 211);
+      font-weight: bold;
+      padding: 10px;
+      font-size: 28px;
+      padding: 0.35em 1.2em;
+      border: 0.1em solid #ffffff;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-shadow: 1px 1px darkgray;
+      background-color:rgba(71, 245, 216, 0.3)
+    }
+  
+    input[type='radio']:checked + span {
+      color: rgb(202, 38, 38);
+      text-decoration: underline;
+    
+    }
+  
+  
+  
+    [type='radio'] {
+      opacity: 0;
+    }
+  
+    .answer-display {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+  
+    [class^='a-button'] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  
+    [class$='Img'] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+  body {
+    background-image: url('https://i.imgur.com/JTjy2Of.jpg');
+    background-position: center;
+  }
+
+  .start-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .start-button {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(211, 9, 211);
+    text-align: center;
+    transition: all 0.2s;
+    margin-top: 20px;
+  }
+
+  .start-button:hover {
+    border: 0.1em solid rgb(243, 115, 115);
+  }
+
+  #start {
+    font-size: 25px;
+    padding: 0.35em 1.2em;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(230, 164, 79);
+    text-shadow: 1px 1px #ff0000;
+    text-shadow: black;
+  }
+
+  h1 {
+    color: gold;
+    text-shadow: 2px 2px #ff0000;
+  }
+
+  #submit-button {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid rgb(218, 157, 157);
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(211, 9, 211);
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  #submit-button:hover {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(211, 9, 211);
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  #next-question-button {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(211, 9, 211);
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .restart-button {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(211, 9, 211);
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(245, 110, 110);
+    text-align: center;
+    transition: all 0.2s;
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 1px 1px #ff0000;
+  }
+
+  #question-container {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    flex: -1;
+  }
+
+  label {
+    display: flex;
+    justify-content: center;
+    color: rgb(166, 18, 211);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 28px;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-shadow: 1px 1px darkgray;
+    background-color:rgba(71, 245, 216, 0.3)
+  }
+
+  input[type='radio']:checked + span {
+    color: rgb(202, 38, 38);
+    text-decoration: underline;
+  
+  }
+
+
 
   [type='radio'] {
     opacity: 0;
