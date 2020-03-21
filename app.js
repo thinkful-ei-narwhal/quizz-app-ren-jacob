@@ -52,7 +52,7 @@ const store = {
 
 function generateStartPage() {
   if (store.quizStarted === false) {
-    let start = `<div class = 'start-container'>
+    let start = `<div class = 'start-container' tabindex = '0'>
       <p id="start">Click Start to Test Your Skills</p>
     <button class="start-button" type="button" value="submit">
       START
@@ -66,7 +66,7 @@ function generateStartPage() {
 // //QUESTION PAGE & ANSWER PAGE
 
 function generateQuestion() {
-  let question = `<p class = 'question'> Question: ${store.questionNumber +
+  let question = `<p class = 'question' tabindex = '0'> Question: ${store.questionNumber +
     1} / 5 </p><p>${store.questions[store.questionNumber].question}</p>`;
   for (
     let i = 0;
@@ -74,29 +74,29 @@ function generateQuestion() {
     i++
   ) {
     let newAnswers = store.questions[store.questionNumber].answers[i];
-    question += `<label><input class = 'js-checkAnswer' type="radio" name = 'radAnswer' checked= 'checked' value = '${newAnswers}'><span id = 'focus'>${newAnswers}</span></label>`;
+    question += `<label tabindex = '0'><input class = 'js-checkAnswer' tabindex = '0' type="radio" name = 'radAnswer' checked= 'checked' value = '${newAnswers}'><span id = 'focus' >${newAnswers}</span></label>`;
   }
   question += `
-  <div class = 'a-button-submit'><button id = 'submit-button' class="next-button" type="button" value="submit" hidden = 'true' >SUBMIT</button> </div>
-  <div id = "answer" hidden></div>`;
+  <div class = 'a-button-submit' tabindex = '0'><button id = 'submit-button' class="next-button" type="button" value="submit" hidden = 'true' >SUBMIT</button> </div>
+  <div id = "answer tabindex = '0'" hidden></div>`;
   $('.Start').html('');
   $('.Start').html(question);
 }
 
 function generateCorrectAnswer() {
-  const correct = `<p class= 'answer-display'> Correct! </p><div class = 'correctImg'>${
+  const correct = `<p class= 'answer-display' tabindex = '0'> Correct! </p><div class = 'correctImg'>${
     store.questions[store.questionNumber].correctImage
   }</div><p class= 'score-display'>SCORE:${store.score}/5</p>
-  <div class = 'a-button-next-question'><button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button></div>`;
+  <div class = 'a-button-next-question' tabindex = '0'><button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button></div>`;
   console.log('the score works', store.score);
   $('.Start').html(correct);
 }
 
 function generateWrongAnswer() {
-  const wrong = `<p class= 'answer-display'> Wrong!</p><div class="wrongImg"><img class="img6" src="https://www.shitpostbot.com/resize/585/400?img=%2Fimg%2Fsourceimages%2Fboss-nass-laughing-58c705b9ad3bb.jpeg" alt="Laughing Boss Nass."></div><p class= 'correct-answer'>Correct Answer: ${
+  const wrong = `<p class= 'answer-display' > Wrong!</p><div class="wrongImg"><img class="img6" src="https://www.shitpostbot.com/resize/585/400?img=%2Fimg%2Fsourceimages%2Fboss-nass-laughing-58c705b9ad3bb.jpeg" alt="Laughing Boss Nass."></div><p class= 'correct-answer'>Correct Answer: ${
     store.questions[store.questionNumber].correctAnswer
   } <p class= 'score-display'>SCORE:${store.score}/5</p> 
-  <div class = 'a-button-next-question'><button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button></div>`;
+  <div class = 'a-button-next-question' tabindex = '0'><button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button></div>`;
   $('.Start').html(wrong);
   console.log('the score works');
   return store.score;
