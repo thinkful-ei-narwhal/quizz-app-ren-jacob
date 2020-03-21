@@ -77,7 +77,7 @@ function generateQuestion() {
     question += `<label><input class = 'js-checkAnswer' type="radio" name = 'radAnswer' checked= 'checked' value = '${newAnswers}'><span id = 'focus'>${newAnswers}</span></label>`;
   }
   question += `
-  <button id = 'submit-button' class="next-button" type="button" value="submit" hidden = 'true' >SUBMIT</button>
+  <div class = 'a-button-submit'><button id = 'submit-button' class="next-button" type="button" value="submit" hidden = 'true' >SUBMIT</button> </div>
   <div id = "answer" hidden></div>`;
   $('.Start').html('');
   $('.Start').html(question);
@@ -87,7 +87,7 @@ function generateCorrectAnswer() {
   const correct = `<p class= 'answer-display'> Correct! </p><div class = 'correctImg'>${
     store.questions[store.questionNumber].correctImage
   }</div><p class= 'score-display'>SCORE:${store.score}/5</p>
-  <button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button>`;
+  <div class = 'a-button-next-question'><button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button></div>`;
   console.log('the score works', store.score);
   $('.Start').html(correct);
 }
@@ -96,7 +96,7 @@ function generateWrongAnswer() {
   const wrong = `<p class= 'answer-display'> Wrong!</p><div class="wrongImg"><img class="img6" src="https://www.shitpostbot.com/resize/585/400?img=%2Fimg%2Fsourceimages%2Fboss-nass-laughing-58c705b9ad3bb.jpeg" alt="Laughing Boss Nass."></div><p class= 'correct-answer'>Correct Answer: ${
     store.questions[store.questionNumber].correctAnswer
   } <p class= 'score-display'>SCORE:${store.score}/5</p> 
-  <button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button>`;
+  <div class = 'a-button-next-question'><button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button></div>`;
   $('.Start').html(wrong);
   console.log('the score works');
   return store.score;
@@ -105,7 +105,7 @@ function generateWrongAnswer() {
 // END PAGE
 
 function generateEndPage() {
-  let end = `<p>The End</p><p>SCORE:${store.score}/5</p><div class="endImg"><img class="img7" src="https://i2.wp.com/quantitativepeace.com/wp-content/uploads/2019/12/kt2uymlokn8umlspzkih.jpg?resize=768%2C384" alt="Luke Skywalker and Han Solo receiving metals"></div><button id = \'restart-button\' class="restart-button" type="button" value="submit">Restart</button>`;
+  let end = `<p>The End</p><p>SCORE:${store.score}/5</p><div class = 'restart-page-Img'<img class="img7" src="https://i2.wp.com/quantitativepeace.com/wp-content/uploads/2019/12/kt2uymlokn8umlspzkih.jpg?resize=768%2C384" alt="Luke Skywalker and Han Solo receiving metals"></div><div class = 'a-button-restart'><button id = \'restart-button\' class="restart-button" type="button" value="submit">Restart</button></div>`;
   $('.Start').html(end);
 }
 
