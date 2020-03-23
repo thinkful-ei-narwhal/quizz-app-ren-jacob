@@ -4,9 +4,6 @@
 body {
   background-color: rgba(211, 254, 238, .7);
 }
-
-@media (max-width: 600px) {
- 
   .start-container {
     display: flex;
     flex-direction: column;
@@ -139,7 +136,6 @@ body {
     align-items: center;
     justify-self: center;
     flex-direction: column;
-    flex: -1;
   }
 
   label {
@@ -155,6 +151,8 @@ body {
     border-radius: 0.12em;
     box-sizing: border-box;
     text-shadow: 1px 1px #532626;
+    background-color:rgba(71, 245, 216, 0.3);
+    color: rgb(166, 18, 211);
   }
 
   input[type='radio']:checked + span {
@@ -186,13 +184,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-<<<<<<< HEAD
-  body {
-    background-color: rgba(71, 245, 216, 0.2);
-  }
-=======
->>>>>>> e6d61d668bbea248cb83d3de11e9e55addee93c7
+/* @media (min-width: 768px) {
 
   .start-container {
     display: flex;
@@ -558,7 +550,7 @@ body {
   }
 }
 
- @media (max-width: 992px) { 
+ @media (min-width: 992px) { 
   
     .start-container {
       display: flex;
@@ -743,10 +735,10 @@ body {
       align-items: center;
     }
   }
-}
 
 
-@media (max-width: 992px) {
+
+@media (min-width: 992px) {
   body {
     background-color: rgba(211, 254, 238, .7);
   }
@@ -933,4 +925,4 @@ body {
     justify-content: center;
     align-items: center;
   }
-}
+} */

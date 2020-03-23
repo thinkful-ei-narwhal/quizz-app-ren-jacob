@@ -38,7 +38,7 @@ const store = {
     {
       question: "What was Finn's stormtropper code name?",
       answers: ['JK-1983', 'FN-2187', 'GN-6783', 'FK-3902'],
-      correctAnswer: 'FN-2187,',
+      correctAnswer: 'FN-2187',
       correctImage:
         "<img class= 'img5' src='https://lumiere-a.akamaihd.net/v1/images/finn-bio-1_92f4d3db.jpeg?region=0%2C39%2C1280%2C722&width=768' alt= 'Finn in his stormtrooper armor.'>"
     }
@@ -52,60 +52,74 @@ const store = {
 
 function generateStartPage() {
   if (store.quizStarted === false) {
-    let start = `<div class = 'start-container' tabindex = '0'>
+    const start = `<div class = 'start-container'>
       <p id="start">Click Start to Test Your Skills</p>
-    <button class="start-button" type="button" value="submit">
+    <button class="start-button" type="button" value="submit"  tabindex = '0'>
       START
     </button>
     </div>`;
     $('.Start').html(start);
   } else {
-    console.log('not working');
   }
 }
 // //QUESTION PAGE & ANSWER PAGE
 
 function generateQuestion() {
-  let question = `<p class = 'question' tabindex = '0'> Question: ${store.questionNumber +
-    1} / 5 </p><p>${store.questions[store.questionNumber].question}</p>`;
+  let question = `<p class = 'question' > Question: ${store.questionNumber +1} / 5 </p><p>${store.questions[store.questionNumber].question}</p>`;
   for (
     let i = 0;
     i < store.questions[store.questionNumber].answers.length;
     i++
   ) {
     let newAnswers = store.questions[store.questionNumber].answers[i];
-    question += `<label tabindex = '0'><input class = 'js-checkAnswer' tabindex = '0' type="radio" name = 'radAnswer' checked= 'checked' value = '${newAnswers}'><span id = 'focus' >${newAnswers}</span></label>`;
+    question +=
+     `<form id = check-submited-answer> 
+        <label>
+        <input class = 'js-checkAnswer' type="radio" name = 'radAnswer' value = '${newAnswers}'>
+        <span id = 'focus'  tabindex = '0'>${newAnswers}</span>
+        </label>
+      </form>`;
   }
-  question += `
-  <div class = 'a-button-submit' tabindex = '0'><button id = 'submit-button' class="next-button" type="button" value="submit" hidden = 'true' >SUBMIT</button> </div>
-  <div id = "answer tabindex = '0'" hidden></div>`;
+  question += 
+  `<div class = 'a-button-submit'>
+  <button id = 'submit-button'  tabindex = '0' class="next-button" type="button" value="submit" hidden = 'true'> SUBMIT </button>
+  </div>
+  <div id = "answer" hidden> </div>`;
   $('.Start').html('');
   $('.Start').html(question);
 }
 
 function generateCorrectAnswer() {
-  const correct = `<p class= 'answer-display' tabindex = '0'> Correct! </p><div class = 'correctImg'>${
-    store.questions[store.questionNumber].correctImage
-  }</div><p class= 'score-display'>SCORE:${store.score}/5</p>
-  <div class = 'a-button-next-question' tabindex = '0'><button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button></div>`;
-  console.log('the score works', store.score);
+  const correct =
+   `<p class= 'answer-display'> Correct! </p>
+    <div class = 'correctImg'>${store.questions[store.questionNumber].correctImage}</div>
+    <p class= 'score-display'>SCORE:${store.score}/5</p>
+    <div class = 'a-button-next-question'>
+    <button id = 'next-question-button' tabindex = '0' class="next-question-button" type="button" value="submit"> NEXT </button>
+    </div>`;
   $('.Start').html(correct);
 }
 
 function generateWrongAnswer() {
-  const wrong = `<p class= 'answer-display' > Wrong!</p><div class="wrongImg"><img class="img6" src="https://www.shitpostbot.com/resize/585/400?img=%2Fimg%2Fsourceimages%2Fboss-nass-laughing-58c705b9ad3bb.jpeg" alt="Laughing Boss Nass."></div><p class= 'correct-answer'>Correct Answer: ${
-    store.questions[store.questionNumber].correctAnswer
-  } <p class= 'score-display'>SCORE:${store.score}/5</p> 
-  <div class = 'a-button-next-question' tabindex = '0'><button id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button></div>`;
+  const wrong =
+   `<p class= 'answer-display' > Wrong!</p>
+   <div class="wrongImg"><img class="img6" src="https://www.shitpostbot.com/resize/585/400?img=%2Fimg%2Fsourceimages%2Fboss-nass-laughing-58c705b9ad3bb.jpeg" alt="Laughing Boss Nass.">
+   </div><p class= 'correct-answer'> Correct Answer: ${store.questions[store.questionNumber].correctAnswer} <p class= 'score-display'>SCORE:${store.score}/5</p> 
+   <div class = 'a-button-next-question'><button tabindex = '0' id = 'next-question-button' class="next-question-button" type="button" value="submit">NEXT</button>
+   </div>`;
   $('.Start').html(wrong);
-  console.log('the score works');
   return store.score;
 }
 
 // END PAGE
 
 function generateEndPage() {
-  let end = `<p>The End</p><p>SCORE:${store.score}/5</p><div class = 'restart-page-Img'<img class="img7" src="https://i2.wp.com/quantitativepeace.com/wp-content/uploads/2019/12/kt2uymlokn8umlspzkih.jpg?resize=768%2C384" alt="Luke Skywalker and Han Solo receiving metals"></div><div class = 'a-button-restart'><button id = \'restart-button\' class="restart-button" type="button" value="submit">Restart</button></div>`;
+  const end = 
+  `<p>The End</p><p>SCORE:${store.score}/5</p>
+  <div class = 'restart-page-Img'<img class="img7" src="https://i2.wp.com/quantitativepeace.com/wp-content/uploads/2019/12/kt2uymlokn8umlspzkih.jpg?resize=768%2C384" alt="Luke Skywalker and Han Solo receiving metals">
+  </div>
+  <div class = 'a-button-restart'><button id = \'restart-button\' class="restart-button" type="button" value="submit">Restart</button>
+  </div>`;
   $('.Start').html(end);
 }
 
@@ -114,8 +128,6 @@ function generateEndPage() {
 function handleStartButton() {
   $('.Start').on('click', '.start-button', function() {
     store.quizStarted = true;
-    // console.log('workin', store.quizStarted, store.questionNumber);
-    console.log('working');
     generateQuestion();
   });
 }
@@ -136,20 +148,18 @@ function checkedAnswer() {
   $('.Start').change('js-checkAnswer', function() {
     if ($('.js-checkAnswer').is(':checked')) {
       $('.next-button').removeAttr('hidden');
-      console.log('working checked');
+
     }
   });
   $('.Start').on('click', '.next-button', function(event) {
     event.preventDefault();
     const value = $('.js-checkAnswer:checked').val();
-    console.log(value);
     if (value === store.questions[store.questionNumber].correctAnswer) {
       store.score++;
       generateCorrectAnswer();
     } else {
       generateWrongAnswer();
     }
-    // console.log('working', value);
   });
 }
 
@@ -159,7 +169,6 @@ function restartGame() {
     store.questionNumber = 0;
     store.score = 0;
     generateStartPage();
-    console.log('working');
   });
 }
 
