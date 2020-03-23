@@ -190,9 +190,7 @@
 
 @media (min-width: 768px) {
   body {
-    background-image: url('https://i.imgur.com/JTjy2Of.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: rgba(71, 245, 216, 0.2);
   }
 
   .start-container {
