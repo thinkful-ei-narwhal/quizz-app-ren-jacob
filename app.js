@@ -65,7 +65,10 @@ function generateStartPage() {
 // //QUESTION PAGE & ANSWER PAGE
 
 function generateQuestion() {
-  let question = `<p class = 'question' > Question: ${store.questionNumber +1} / 5 </p><p>${store.questions[store.questionNumber].question}</p>`;
+  let question = `<p class = 'question' >
+   Question: ${store.questionNumber +1} / 5 </p>
+   <p>${store.questions[store.questionNumber].question}</p>
+   <form class = 'check-submited-answer'>`;
   for (
     let i = 0;
     i < store.questions[store.questionNumber].answers.length;
@@ -73,16 +76,15 @@ function generateQuestion() {
   ) {
     let newAnswers = store.questions[store.questionNumber].answers[i];
     question +=
-     `<form class = 'check-submited-answer'> 
-        <label>
+     `  <label>
         <input class = 'js-checkAnswer' type="radio" name = 'radAnswer' value = '${newAnswers}'>
         <span id = 'focus'  tabindex = '0'>${newAnswers}</span>
         </label>
-      </form>`;
+            `;
   }
   question += 
   `
-  <form class = 'check-submited-answer'>
+  
   <div class = 'a-button-submit'>
   <button id = 'submit-button'  tabindex = '0' class="next-button" type="button" value="submit" hidden = 'true'> SUBMIT </button>
   </div>
