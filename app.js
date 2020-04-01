@@ -73,7 +73,7 @@ function generateQuestion() {
   ) {
     let newAnswers = store.questions[store.questionNumber].answers[i];
     question +=
-     `<form id = check-submited-answer> 
+     `<form class = 'check-submited-answer'> 
         <label>
         <input class = 'js-checkAnswer' type="radio" name = 'radAnswer' value = '${newAnswers}'>
         <span id = 'focus'  tabindex = '0'>${newAnswers}</span>
@@ -81,10 +81,13 @@ function generateQuestion() {
       </form>`;
   }
   question += 
-  `<div class = 'a-button-submit'>
+  `
+  <form class = 'check-submited-answer'>
+  <div class = 'a-button-submit'>
   <button id = 'submit-button'  tabindex = '0' class="next-button" type="button" value="submit" hidden = 'true'> SUBMIT </button>
   </div>
-  <div id = "answer" hidden> </div>`;
+  <div id = "answer" hidden> </div>
+  </form>`;
   $('.Start').html('');
   $('.Start').html(question);
 }
